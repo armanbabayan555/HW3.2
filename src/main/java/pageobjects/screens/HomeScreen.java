@@ -4,19 +4,20 @@ import locators.HomeScreenConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pageobjects.base.BaseScreen;
-import setup.WaitUtils;
 
 public class HomeScreen extends BaseScreen {
     private final By zenith = By.xpath(HomeScreenConstants.ZENITH);
     private final By vhernierMilano = By.xpath(HomeScreenConstants.vhernierMilano);
 
     public void clickOnZenith() {
-        WebElement zenithImage = WaitUtils.getInstance().waitForElementToBeClickable(zenith);
+        WebElement zenithImage = driver.findElement(zenith);
+        scrollToElement(zenithImage);
         click(zenithImage);
     }
 
     public void clickOnVhernierMilano() {
-        WebElement vMilano = WaitUtils.getInstance().waitForElementToBeClickable(vhernierMilano);
-        click(vMilano);
+        WebElement vhernierImage = driver.findElement(vhernierMilano);
+        scrollToElement(vhernierImage);
+        click(vhernierImage);
     }
 }
