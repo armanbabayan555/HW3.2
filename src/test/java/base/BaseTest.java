@@ -16,7 +16,7 @@ import java.io.IOException;
 public abstract class BaseTest {
 
     @BeforeClass
-    @Parameters("browser")
+    @Parameters("browserName")
     public void remoteServerSetup(String browserName) {
         DriverUtils.setDriver(browserName);
     }
@@ -28,7 +28,7 @@ public abstract class BaseTest {
             var camera = (TakesScreenshot) DriverUtils.getDriver();
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
             try {
-                Files.move(screenshot, new File("src/main/resources/snapshots" + testResult.getName() + ".png"));
+                Files.move(screenshot, new File("src/main/resources/snapshots/" + testResult.getName() + ".png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

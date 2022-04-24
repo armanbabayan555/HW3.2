@@ -10,7 +10,6 @@ public abstract class BaseScreen {
 
     protected static WebDriver driver;
     protected Actions actions;
-    protected final String homePage = "https://www.chronograph.am";
 
     public BaseScreen() {
         driver = getDriver();
@@ -27,6 +26,10 @@ public abstract class BaseScreen {
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
+    }
+
+    public void clickBackButton() {
+        driver.navigate().back();
     }
 
 

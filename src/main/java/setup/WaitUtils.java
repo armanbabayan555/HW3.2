@@ -15,13 +15,21 @@ public class WaitUtils {
         return new WaitUtils();
     }
 
-    public WebElement waitForElementToBeClickable(By location) {
+    public WebElement waitForElementToBeClickable(By by) {
         try {
-            return new WebDriverWait(DriverUtils.getDriver(), MAX_DURATION).until(ExpectedConditions.elementToBeClickable(location));
+            return new WebDriverWait(DriverUtils.getDriver(), MAX_DURATION).until(ExpectedConditions.elementToBeClickable(by));
         } catch (WebDriverException ignored) {
-            throw new Error("Element with WebElement name '" + location + "' could not be found");
+            throw new Error("The Element with the name '" + by + "' could not be found");
         }
     }
 
+    public boolean waitForElementToBeVisible(By by) {
+        try {
+            new WebDriverWait(DriverUtils.getDriver(), MAX_DURATION).until(ExpectedConditions.visibilityOfElementLocated(by));
+            return true;
+        } catch (WebDriverException ignored) {
+            throw new Error("The Element with the name '" + by + "' could not be found");
+        }
+    }
 
 }

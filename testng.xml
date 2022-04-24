@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="suite" parallel="tests">
-    <test name="1">
+    <test name="verifyBlueWatchBeingPresentInZenith">
         <parameter name="browserName" value="chrome">
             <classes>
-                <class name="HomeTest">
+                <class name="Tests">
                     <methods>
-                        <include name="isZenithOpen"/>
+                        <include name="verifyBlueWatchBeingPresentInZenith"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="verifyTitaniumWatchBeingPresentInZenith">
+        <parameter name="browserName" value="chrome">
+            <classes>
+                <class name="Tests">
+                    <methods>
+                        <include name="verifyTitaniumWatchBeingPresentInZenith"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="verifyRoseGoldBraceletBeingPresentInVhernierMilano">
+        <parameter name="browserName" value="chrome">
+            <classes>
+                <class name="Tests">
+                    <methods>
+                        <include name="verifyRoseGoldBraceletBeingPresentInVhernierMilano"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="verifyRoseGoldEarringsBeingPresentInVhernierMilano">
+        <parameter name="browserName" value="chrome">
+            <classes>
+                <class name="Tests">
+                    <methods>
+                        <include name="verifyRoseGoldEarringsBeingPresentInVhernierMilano"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="verifyWatchAndBraceletBeingPresent">
+        <parameter name="browserName" value="chrome">
+            <classes>
+                <class name="Tests">
+                    <methods>
+                        <include name="verifyWatchAndBraceletBeingPresent"/>
                     </methods>
                 </class>
             </classes>
